@@ -1,13 +1,15 @@
 import React from 'react'
 const List = props => {
+    console.log(props.resource)
     const renderList = () => {
-        return (
-            <li>{props.resource}</li>
-        );
+        if (!props.resource) {
+            return <div>Loading...</div>;
+        }
+        return props.resource && props.resource.map((el, i) => { return (<li key={i}>{el.title}</li>); })
     }
-    return(
+    return (
         <ul className="ui list">
-           { renderList() }
+            {renderList()}
         </ul>
     )
 
