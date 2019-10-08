@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../reusable/Button'
 import ResourceList from './ResourceList'
+import UserList from './UserList'
 const App = () => {
     const [resource, setResource] = useState('posts')
     const handleClick = e => {
@@ -9,6 +10,9 @@ const App = () => {
     }
     return (
         <div className='ui container grid'>
+            <div className="row">
+                <UserList />
+            </div>
             <div className="row">
                 <h2 className='ui header'>HELLO</h2>
             </div>

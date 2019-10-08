@@ -2,10 +2,10 @@ import React from 'react'
 const List = props => {
     console.log(props.resource)
     const renderList = () => {
-        if (!props.resource) {
+        if (!props.list) {
             return <div>Loading...</div>;
         }
-        return props.resource && props.resource.map((el, i) => { return (<li key={i}>{el.title}</li>); })
+        return props.list && props.list.map((el, i) => { return (<li key={i}>{el.title || el.name}</li>); })
     }
     return (
         <ul className="ui list">
